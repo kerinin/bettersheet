@@ -46,6 +46,10 @@ h2 {
   line-height: 28px;
 }
 
+p {
+  text-align: justify;
+}
+
 .content {
   width: 960px;
   margin-left: auto;
@@ -64,3 +68,4 @@ h2 {
 @import 'header';
 @import 'invites';
 @import 'suggestions';
+@import 'static';

@@ -24,6 +24,15 @@ class InvitesController < ApplicationController
   def show
     @invite = Invite.find(params[:id])
 
+    @headline = case params[:source]
+    when 'recommend'
+      "We've sent an email to #{@invite.email}"
+    when 'sign_up'
+      "We'll send you an invitation soon!"
+    when nil
+      "Welcome back!"
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @invite }
@@ -60,11 +69,11 @@ class InvitesController < ApplicationController
         if params[:source] == 'sign_up'
           BetaMailer.sign_up(@invite).deliver
           
-          format.html { redirect_to @invite, :notice => "We'll send you an invitation soon!"}
+          format.html { redirect_to invite_path(@invite, :source => 'sign_up'), :notice => "We'll send you an invitation soon!"}
         elsif params[:source] == 'recommend'
           BetaMailer.recommend(@invite).deliver
           
-          format.html { redirect_to @invite, :notice => "We've sent an email to #{@invite.email}"}
+          format.html { redirect_to invite_path(@invite, :source => 'recommend'), :notice => "We've sent an email to #{@invite.email}"}
         end
       else
         format.html { render :action => "new" }

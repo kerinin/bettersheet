@@ -1,18 +1,11 @@
 #sign_up.content.invites
-  %h1 There's a better way to manage project cost than spreadsheets
+  %h1 There's a better way to manage project cost than spreadsheets, coming soon
 
   %h2 
-    BetterSheet gives you simple tools to seamlessly create cost estimates, track project
+    BetterSheet will give you simple tools to seamlessly create cost estimates, track project
     costs in real-time, and communicate with clients
   
   %ol
-    %li
-      %summary Designed specifically for large-scale cost estimation and tracking
-      %p
-        Tired of entering formulas into spreadsheets? BetterSheet helps you organize
-        costs by grouping them into categories, and provides different types of line items for
-        different types of costs.  
-
     %li
       %summary Flexible reporting keeps you and your clients informed
       %p
@@ -27,7 +20,13 @@
         Do you have folders full of past cost estimates for the same project? 
         BetterSheet lets you save named snapshots of your projects and provides
         tools to compare the changes between snapshots.  
-      
+
+    %li
+      %summary Designed specifically for large-scale cost estimation and tracking
+      %p
+        Tired of entering formulas into spreadsheets? BetterSheet helps you organize
+        costs by grouping them into categories, and provides different types of line items for
+        different types of costs.      
       
 
   = form_for @invite do |f|
@@ -45,4 +44,4 @@
       = f.text_field :email, {:type => :email, :placeholder => 'Email address'}
 
     .actions
-      = f.submit 'Sign me up!', {:class => :button}
+      = f.submit 'Keep me informed!', {:class => :button}
