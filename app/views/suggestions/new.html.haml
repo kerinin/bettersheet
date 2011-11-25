@@ -1,5 +1,28 @@
-%h1 New suggestion
+#suggestion.content.suggestions
+  %h1
+    -if notice
+      =notice
+    -else
+      Got an idea?  We'd love to hear it!
 
-= render 'form'
+  %h2
+    We'd love to know what features you think are the most important
+    or new ways we can make managing cost on your projects less painful
+    
+  = form_for @suggestion do |f|
+    -if @suggestion.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@suggestion.errors.count, "error")} prohibited this suggestion from being saved:"
+        %ul
+          - @suggestion.errors.full_messages.each do |msg|
+            %li= msg
 
-= link_to 'Back', suggestions_path
+    .field
+      = f.label :email, 'Your email'
+      = f.text_field :email, {:placeholder => "Your email"}
+    .field
+      = f.label :suggestion
+      = f.text_area :suggestion, {:placeholder => "Your suggestion"}
+    .actions
+      = f.submit 'Suggest', {:class => :button}
+

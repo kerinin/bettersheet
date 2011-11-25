@@ -1,3 +1,28 @@
 // Place all the styles related to the suggestions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body .suggestions {
+  form {
+    text-align: center;
+    
+    label {display: none;}
+    
+    input, textarea {
+      width : 600px;
+      border: 2px solid $blue;
+      border-radius: 2px;
+    }
+    
+    textarea {
+      height: 200px;
+    }
+    
+    input[type=submit] {
+      color: white;
+      border-radius: 6px;
+      width: 604px;
+      height: 40px;
+    }
+  }
+}
