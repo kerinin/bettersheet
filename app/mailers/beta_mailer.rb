@@ -1,5 +1,5 @@
 class BetaMailer < ActionMailer::Base
-  default :from => "support@bettersheet.com"
+  default :from => "BetterSheet <support@bettersheet.com>"
   
   def sign_up(invite)
     mail(:to => invite.email, :subject => "Thanks for registering with BetterSheet!")
