@@ -51,6 +51,9 @@ class InvitesController < ApplicationController
   def create
     @invite = Invite.new(params[:invite])
     @invite.date = Date.today
+    if params[:source] == 'recommend'
+      @invite.recommendation = true 
+    end
 
     respond_to do |format|
       if @invite.save

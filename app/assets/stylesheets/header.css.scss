@@ -1,0 +1,41 @@
+body header {
+  margin: 0;
+  
+  height: 30px;
+  background: black;
+  padding: 5px;
+  
+  &, a {
+    color: #bbb;
+    font-size: 14px;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+    margin-right: 10px;
+    
+    a {
+      margin-left: 15px;
+    }
+  }
+  
+  .logo, .logo a, .logo a span.accent {
+    font-size: 22px;
+    font-weight: 100;
+    color: white;
+    line-height: 30px;
+    margin-left: 10px;
+    
+    span.accent {
+      color: lighten($blue, 30%);
+    }
+  }
+}

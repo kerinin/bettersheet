@@ -1,22 +1,28 @@
-%h1 Sign up for a beta invite
+#sign_up.content.invites
 
-= form_for @invite do |f|
-  =hidden_field_tag :source, 'recommend'
+  %h1 Recommend BetterSheet
   
-  -if @invite.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@invite.errors.count, "error")} prohibited this invite from being saved:"
-      %ul
-        - @invite.errors.full_messages.each do |msg|
-          %li= msg
+  %h2
+    Think someone you know could benefit from simplified project cost management?
+    We'll send them an introduction and hold them a place in line
 
-  .field
-    =f.label :referrer, 'Your name'
-    =f.text_field :referrer
+  =form_for @invite, :html => {:class => :recommendation} do |f|
+    =hidden_field_tag :source, 'recommend'
+  
+    -if @invite.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@invite.errors.count, "error")} prohibited this invite from being saved:"
+        %ul
+          - @invite.errors.full_messages.each do |msg|
+            %li= msg
+
+    .field
+      =f.label :referrer, 'Your name'
+      =f.text_field :referrer, {:placeholder => "Your name"}
     
-  .field
-    = f.label :email, 'Email you want to recommend'
-    = f.text_field :email
+    .field
+      = f.label :email
+      = f.text_field :email, {:type => :email, :placeholder => 'Email'}
 
-  .actions
-    = f.submit 'Recommend'
+    .actions
+      = f.submit 'Recommend', {:class => :button}

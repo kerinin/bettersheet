@@ -1,3 +1,100 @@
 // Place all the styles related to the invites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body .invites {
+  h1 {
+    margin-top: 30px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  p {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  ol {
+    margin-bottom: 50px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    li {
+      margin-bottom: 20px;
+      list-style-type: decimal;
+      font-size: 22px;
+      font-weight: bold;
+      color: #aaa;
+      
+      summary {
+        font-size: 20px;
+        color: darken($blue, 5%);
+      }
+      p {
+        font-size: 18px;
+        font-weight: normal;
+        text-align: justify;
+      }
+    }
+  }
+  
+  form {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    label { display: none; }
+    
+    div { display: inline; }
+    
+    input {
+      vertical-align: middle;
+      font-size: 26px;
+      padding-left: 10px;
+      height: 40px;
+      width: 350px;
+      border-radius: 2px;
+      border: 2px solid $blue;
+    }
+    
+    input[type=submit] {
+      vertical-align: middle;
+      color: white;
+      padding: 10px 18px;
+      font-size: 26px;
+      border-radius: 6px;
+      border: none;
+      margin-left: 20px;
+    }
+  }
+  
+  form.recommendation {
+    .field, .actions {
+      display: block;
+    }
+    
+    input[type=submit] {
+      width: 364px;
+      margin: 0;
+    }
+  }
+  
+  #checkmark {
+    background: #5CD65C;
+    border-radius: 70px;
+    padding: 10px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 100px;
+    line-height: 100px;
+    color: white;
+    margin-bottom: 50px;
+  }
+}

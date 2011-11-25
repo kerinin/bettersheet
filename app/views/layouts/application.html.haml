@@ -1,0 +1,24 @@
+!!! html
+%html
+  %head
+    %title Bettersheet: Simplified Project Cost Management
+    = stylesheet_link_tag    "application", {:class => :cssfx }
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  
+  %body
+
+    %header
+      .left
+        .logo
+          =link_to sign_up_invites_path do
+            %span.accent> Better
+            Sheet
+        
+      .right
+        =link_to 'Sign Up', sign_up_invites_path
+        =link_to 'Recommend', recommend_invites_path
+        =link_to 'About', '/'
+    
+    = yield
+

@@ -1,18 +1,48 @@
-%h1 Sign up for a beta invite
+#sign_up.content.invites
+  %h1 There's a better way to manage project cost than spreadsheets
 
-= form_for @invite do |f|
-  =hidden_field_tag :source, 'sign_up'
+  %h2 
+    BetterSheet gives you simple tools to seamlessly create cost estimates, track project
+    costs in real-time, and communicate with clients
   
-  -if @invite.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@invite.errors.count, "error")} prohibited this invite from being saved:"
-      %ul
-        - @invite.errors.full_messages.each do |msg|
-          %li= msg
+  %ol
+    %li
+      %summary Designed specifically for large-scale cost estimation and tracking
+      %p
+        Tired of entering formulas into spreadsheets? BetterSheet helps you organize
+        costs by grouping them into categories, and provides different types of line items for
+        different types of costs.  
 
-  .field
-    = f.label :email
-    = f.text_field :email
+    %li
+      %summary Flexible reporting keeps you and your clients informed
+      %p
+        Hate putting together estimates, presentation and invoices
+        for you clients? Looking for a simple way to know if your project is on track
+        in real time?  BetterSheet makes it easy to format your data into cost estimates, 
+        progress reports or invoices.
+                  
+    %li
+      %summary Named versions let you keep track of your projects as they evolve
+      %p
+        Do you have folders full of past cost estimates for the same project? 
+        BetterSheet lets you save named snapshots of your projects and provides
+        tools to compare the changes between snapshots.  
+      
+      
 
-  .actions
-    = f.submit 'Sign me up!'
+  = form_for @invite do |f|
+    =hidden_field_tag :source, 'sign_up'
+  
+    -if @invite.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@invite.errors.count, "error")} prohibited this invite from being saved:"
+        %ul
+          - @invite.errors.full_messages.each do |msg|
+            %li= msg
+
+    .field
+      = f.label :email
+      = f.text_field :email, {:type => :email, :placeholder => 'Email address'}
+
+    .actions
+      = f.submit 'Sign me up!', {:class => :button}

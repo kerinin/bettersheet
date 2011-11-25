@@ -7,3 +7,7 @@ Feature: Beta Suggestions
     And I press "Suggest"
     Then I should see "Thanks for the feedback"
     And I should have 1 suggestion
+    
+  Scenario: Make empty suggestion
+  
+  Scenario: Make suggestion without email

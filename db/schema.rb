@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125170626) do
+ActiveRecord::Schema.define(:version => 20111125182407) do
 
   create_table "invites", :force => true do |t|
     t.string   "referrer"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20111125170626) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "recommendation", :default => false
   end
 
   create_table "suggestions", :force => true do |t|
