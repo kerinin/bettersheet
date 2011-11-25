@@ -15,7 +15,7 @@ group :development, :test do
 end
 
 gem 'json'
-gem 'haml'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +28,7 @@ end
 gem 'jquery-rails'
 
 group :test do
+  gem 'email_spec'
   gem 'capybara'
   gem 'cucumber-websteps'
   gem 'cucumber-rails'

@@ -1,0 +1,18 @@
+%h1 Sign up for a beta invite
+
+= form_for @invite do |f|
+  =hidden_field_tag :source, 'sign_up'
+  
+  -if @invite.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@invite.errors.count, "error")} prohibited this invite from being saved:"
+      %ul
+        - @invite.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .actions
+    = f.submit 'Sign me up!'

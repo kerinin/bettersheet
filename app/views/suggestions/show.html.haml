@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @suggestion.email
+%p
+  %b Date:
+  = @suggestion.date
+%p
+  %b Suggestion:
+  = @suggestion.suggestion
+
+= link_to 'Edit', edit_suggestion_path(@suggestion)
+\|
+= link_to 'Back', suggestions_path

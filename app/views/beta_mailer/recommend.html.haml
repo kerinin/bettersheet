@@ -1,0 +1,26 @@
+!!! html
+%html
+  %head
+    %meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+
+  %body
+    %h1= "#{@referrer} thought you might be interested in a better way to manage construction costs"
+    
+    %p
+      =link_to "BetterSheet.com", 'bettersheet.com'
+      takes the pain out of cost estimation spreadsheets and gives you 
+      powerful tools to track construction cost as it happens.
+      
+    %p
+      We're still in the process of building BetterSheet.com, but as soon as it's ready
+      we'll send you an email
+      
+    %p
+      Since we're still in the early stages of development, this is a great time
+      for you to influence what features we build first.  Do you have specific needs
+      that BetterSheet can help you resolve?
+      =link_to 'Give us a suggestion!', new_suggestion_path
+      
+    %p
+      Do you know others who might appreciate simplifying cost management?
+      =link_to 'Recommend BetterSheet.com to a friend', recommend_invites_path

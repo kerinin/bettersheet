@@ -1,4 +1,13 @@
 Bettersheet::Application.routes.draw do
+  resources :invites do
+    collection do
+      get :sign_up
+      get :recommend
+    end
+  end
+
+  resources :suggestions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
