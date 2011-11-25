@@ -4,23 +4,41 @@
     %meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
 
   %body
-    %h1= "#{@referrer} thought you might be interested in a better way to manage construction costs"
+    %h1= "#{@referrer} thought you might be interested in BetterSheet"
     
     %p
-      =link_to "BetterSheet.com", 'bettersheet.com'
-      takes the pain out of cost estimation spreadsheets and gives you 
-      powerful tools to track construction cost as it happens.
+      =link_to "BetterSheet", 'bettersheet.com'
+      is a better way to manage project cost than spreadsheets.  It gives you
+      simple tools to seamlessly create cost estimates, track project costs in
+      real-time and communicate with clients and co-workers.
+      
+    %ol
+      %li
+        %h3 Flexible reporting keeps you and your clients informed
+        %p
+          Hate putting together estimates, presentation and invoices
+          for you clients? Looking for a simple way to know if your project is on track
+          in real time?  BetterSheet makes it easy to format your data into cost estimates, 
+          progress reports or invoices.
+
+      %li
+        %h3 Named versions let you keep track of your projects as they evolve
+        %p
+          Do you have folders full of past cost estimates for the same project? 
+          BetterSheet lets you save named snapshots of your projects and provides
+          tools to compare the changes between snapshots.  
+
+      %li
+        %h3 Designed specifically for large-scale cost estimation and tracking
+        %p
+          Tired of entering formulas into spreadsheets? BetterSheet helps you organize
+          costs by grouping them into categories, and provides different types of line items for
+          different types of costs.
       
     %p
-      We're still in the process of building BetterSheet.com, but as soon as it's ready
+      We're still in the process of building BetterSheet, but as soon as it's ready
       we'll send you an email
-      
-    %p
-      Since we're still in the early stages of development, this is a great time
-      for you to influence what features we build first.  Do you have specific needs
-      that BetterSheet can help you resolve?
-      =link_to 'Give us a suggestion!', new_suggestion_path
-      
+
     %p
       Do you know others who might appreciate simplifying cost management?
       =link_to 'Recommend BetterSheet.com to a friend', recommend_invites_path
