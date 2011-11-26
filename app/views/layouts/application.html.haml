@@ -26,10 +26,15 @@
             %span.accent> Better
             Sheet
         
+        
       .right
+        =render :partial => 'shared/social_stuff'
+        
         =link_to 'Recommend', recommend_invites_path
         =link_to 'About', '/about'
         =link_to 'Suggestions?', new_suggestion_path
+
     
+
     = yield
 
