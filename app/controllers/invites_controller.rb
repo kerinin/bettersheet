@@ -1,5 +1,7 @@
 class InvitesController < ApplicationController
   
+  caches_page :sign_up, :recommend
+  
   def sign_up
     new
   end
