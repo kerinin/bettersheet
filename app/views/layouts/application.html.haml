@@ -1,7 +1,6 @@
 !!! html
 %html
   %head
-    %title Bettersheet: Simplified Project Cost Management
     = stylesheet_link_tag    "application", {:class => :cssfx }
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -17,6 +16,8 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     
+    = yield :head
+    
   %body
     .wrapper
       %header
@@ -27,7 +28,7 @@
               Sheet
       
       
-        .right
+        %nav.right
           =render :partial => 'shared/social_stuff'
       
           =link_to 'Recommend', recommend_invites_path
@@ -43,7 +44,7 @@
     %footer
       %p
         BetterSheet is being built by Ryan Michael.  Copyright &copy;2011, All Rights Reserved.
-      %p
+      %nav
         =link_to 'Recommend', recommend_invites_path
         &#149;
         =link_to 'About', '/about'
