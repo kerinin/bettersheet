@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+Modernizr.load();
 
 $.watermarker.setDefaults({ color: '#ccc', fallback: true });
 
