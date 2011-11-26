@@ -18,23 +18,37 @@
       })();
     
   %body
+    .wrapper
+      %header
+        .left
+          .logo
+            =link_to sign_up_invites_path do
+              %span.accent> Better
+              Sheet
+      
+      
+        .right
+          =render :partial => 'shared/social_stuff'
+      
+          =link_to 'Recommend', recommend_invites_path
+          =link_to 'About', '/about'
+          =link_to 'Suggestions?', new_suggestion_path
 
-    %header
-      .left
-        .logo
-          =link_to sign_up_invites_path do
-            %span.accent> Better
-            Sheet
-        
-        
-      .right
-        =render :partial => 'shared/social_stuff'
-        
-        =link_to 'Recommend', recommend_invites_path
-        =link_to 'About', '/about'
-        =link_to 'Suggestions?', new_suggestion_path
+  
 
+      = yield
     
-
-    = yield
+      .push
+      
+    %footer
+      %p
+        BetterSheet is being built by Ryan Michael.  Copyright &copy;2011, All Rights Reserved.
+      %p
+        =link_to 'Recommend', recommend_invites_path
+        &#149;
+        =link_to 'About', '/about'
+        &#149;
+        =link_to 'Suggestions', new_suggestion_path
+        &#149;
+        =link_to 'Contact', 'mailto:kerinin@gmail.com'
 

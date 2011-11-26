@@ -7,3 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$.watermarker.setDefaults({ color: '#ccc', fallback: true });
+
+$(document).ready( function() {
+  $('input[placeholder], textarea[placeholder]').watermark();
+})

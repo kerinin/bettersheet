@@ -7,11 +7,20 @@
 
 @import 'resets';
 @import 'scaffolds';
+@import 'sticky_footer';
 
-$blue: #09f;
+$background: #EFF3FD;
+$accent: #09f;
+$blue: $accent;
+
+$text: #333;
+$text_active: darken($accent, 10%);
+$light_text: #666;
+$light_text_active: lighten($light_text, 30%);
 
 body {
   background: #EFF3FD;
+  width: 100%;
 
   & * {
     font-family: 'Helvetica', sans-serif;
@@ -23,9 +32,14 @@ body {
   a {
     text-decoration: none;
     color: darken($blue, 10%);
+    outline: none;
     
     &:hover {
       text-decoration: underline;
+    }
+    
+    &:active {
+      outline: none;
     }
   }
 }
@@ -36,16 +50,15 @@ h1 {
   font-weight: bold;
   letter-spacing: -1px;
   text-align: center;
-  line-height: 60px;
+  line-height: 54px;
   text-shadow: 2px 2px 2px white;
 }
 
 h2 {
-  margin-tom: 20px;
+  margin-top: 20px;
   margin-bottom: 50px;
   font-size: 26px;
   font-weight: 100;
-  letter-spacing: -1px;
   text-align: center;
   line-height: 28px;
 }
@@ -56,6 +69,11 @@ p {
   margin-right: auto;
   margin-bottom: 20px;
   text-align: justify;
+}
+
+i {
+  font-size: inherit;
+  font-style: italic;
 }
 
 .content {
@@ -74,6 +92,7 @@ p {
 }
 
 @import 'header';
+@import 'footer';
 @import 'invites';
 @import 'suggestions';
 @import 'static';

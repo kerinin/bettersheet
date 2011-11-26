@@ -26,7 +26,7 @@ class InvitesController < ApplicationController
 
     @headline = case params[:source]
     when 'recommend'
-      "We've sent an email to #{@invite.email}"
+      "We've sent an email to #{@invite.email}."
     when 'sign_up'
       "We'll send you an invitation soon!"
     when nil
@@ -73,7 +73,7 @@ class InvitesController < ApplicationController
         elsif params[:source] == 'recommend'
           BetaMailer.recommend(@invite).deliver
           
-          format.html { redirect_to invite_path(@invite, :source => 'recommend'), :notice => "We've sent an email to #{@invite.email}"}
+          format.html { redirect_to invite_path(@invite, :source => 'recommend'), :notice => "We've sent an email to #{@invite.email}."}
         end
       else
         format.html { render :action => "new" }
