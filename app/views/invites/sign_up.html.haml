@@ -48,4 +48,7 @@
       = f.text_field :email, {:type => :email, :placeholder => 'Email address'}
 
     .actions
-      = f.submit 'Keep me informed!', {:class => :button}
+      = f.submit "Tell me it's ready", {:class => :button}
+  %p   
+    Or,
+    =link_to 'learn more about BetterSheet', '/about'

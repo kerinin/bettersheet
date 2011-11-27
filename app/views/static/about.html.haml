@@ -2,7 +2,7 @@
   %title About BetterSheet: A Better Way to Manage Project Cost
   %meta{ :name => :keywords, :content => 'cost estimation, cost tracking, about'}
 
-#about.content.static
+#about.content.static.invites
   %h1 Built by a general contractor to make the worst part of construction easier.
 
   %h2
@@ -47,3 +47,15 @@
   %p
     ="-Ryan Michael, developer"
     
+    
+  %hr
+  
+  = form_for Invite.new do |f|
+    =hidden_field_tag :source, 'sign_up'
+
+    .field
+      = f.label :email
+      = f.text_field :email, {:type => :email, :placeholder => 'Email address'}
+
+    .actions
+      = f.submit "Tell me it's ready", {:class => :button}
