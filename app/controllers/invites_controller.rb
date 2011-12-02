@@ -70,10 +70,12 @@ class InvitesController < ApplicationController
       if @invite.save
         if params[:source] == 'sign_up'
           BetaMailer.sign_up(@invite).deliver
+          BetaMailer.notify(@invite).deliver
           
           format.html { redirect_to invite_path(@invite, :source => 'sign_up'), :notice => "We'll send you an invitation soon!"}
         elsif params[:source] == 'recommend'
           BetaMailer.recommend(@invite).deliver
+          BetaMailer.notify(@invite).deliver
           
           format.html { redirect_to invite_path(@invite, :source => 'recommend'), :notice => "We've sent an email to #{@invite.email}."}
         end
