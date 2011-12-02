@@ -94,4 +94,16 @@ body .invites {
     color: white;
     margin-bottom: 50px;
   }
+  
+  .survey {
+    padding: 20px;
+    border: 1px solid $blue;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ddd;
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
 }
