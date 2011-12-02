@@ -69,4 +69,6 @@ Bettersheet::Application.configure do
     :domain         => 'heroku.com'
   }
   ActionMailer::Base.delivery_method = :smtp
+  
+  Split.redis = ENV["REDISTOGO_URL"]
 end
