@@ -3,12 +3,10 @@ Feature: Beta Invites
   Scenario: Sign up for invite from the beta sign-up page
     Given I am on the beta sign-up page
     When I fill in "Email" with "example@gmail.com"
-    And I press "Keep me informed"
+    And I press "Tell me when it's ready"
     Then I should see "We'll send you an invitation soon!"
     And "example@gmail.com" should receive an email with subject "Thanks for registering with BetterSheet!"
-
-    When I open the email
-    Then I should see "Thanks for signing up" in the email body
+    And "support@bettersheet.com" should receive an email
   
   @active
   Scenario: Send invite to someone else
@@ -18,12 +16,13 @@ Feature: Beta Invites
     And I press "Recommend"
     Then I should see "We've sent an email to example@gmail.com"
     And "example@gmail.com" should receive an email with subject "Alice invited you to try out BetterSheet; cost management that's better than spreadsheets"
+    And "support@bettersheet.com" should receive an email
   
   
   @active
   Scenario: Sign up for invite without email
     Given I am on the beta sign-up page
-    When I press "Keep me informed"
+    When I press "Tell me when it's ready"
     Then I should see "You didn't enter an email address"
     And they should receive no emails
   

@@ -17,6 +17,8 @@ end
 gem 'json'
 gem 'haml-rails'
 gem 'dalli'
+gem 'split'
+gem 'SystemTimer'
 
 # Gems used only for assets and not required
 # in production environments by default.

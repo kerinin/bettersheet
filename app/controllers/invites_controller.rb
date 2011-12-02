@@ -3,7 +3,9 @@ class InvitesController < ApplicationController
   caches_page :sign_up, :recommend
   
   def sign_up
-    new
+    @invite = Invite.new
+    
+    render :action => ab_test(:landing_page_verbage, 'sign_up_1', 'sign_up_2')
   end
   
   def recommend
@@ -65,15 +67,18 @@ class InvitesController < ApplicationController
     if params[:source] == 'recommend'
       @invite.recommendation = true 
     end
+    finished(:landing_page_verbage, :reset => false)
 
     respond_to do |format|
       if @invite.save
         if params[:source] == 'sign_up'
           BetaMailer.sign_up(@invite).deliver
+          BetaMailer.notify(@invite).deliver
           
           format.html { redirect_to invite_path(@invite, :source => 'sign_up'), :notice => "We'll send you an invitation soon!"}
         elsif params[:source] == 'recommend'
           BetaMailer.recommend(@invite).deliver
+          BetaMailer.notify(@invite).deliver
           
           format.html { redirect_to invite_path(@invite, :source => 'recommend'), :notice => "We've sent an email to #{@invite.email}."}
         end
